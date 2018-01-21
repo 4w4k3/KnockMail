@@ -11,7 +11,7 @@ results = []
 system('clear')
 BLUE, RED, WHITE, YELLOW, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;32m', '\033[0m'
 def search():
-    inputfil = raw_input("Type the path of file containing a list of emails: ")
+    inputfil = raw_input("Path to file containing a list of emails: ")
     with open(inputfil) as inputfile:
         for line in inputfile:
             results.append(line.strip())
@@ -25,7 +25,7 @@ def search():
             stdout.write(RED + "[!] NOTFD - [" + i + "]" + BLUE + " {line " + str(count) + "}\n" + END)
 
 def single():
-    ema = raw_input("Type the email to search: ")
+    ema = raw_input("Email address to search: ")
     is_valid = validate_email(ema,verify=True)
     if str(is_valid).upper() == "TRUE":
         stdout.write(GREEN + "[*] FOUND - [" + ema + "]\n" + END)
@@ -66,5 +66,5 @@ while True:
         if ask.upper() == "E":
             exit(0) 
     except:
-        print "\nThank you for use Knock Mail."
+        print "\nThank you for using Knock Mail."
         exit(0)
