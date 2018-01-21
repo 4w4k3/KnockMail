@@ -1,3 +1,2 @@
-validate_email
-pyDNS
-
+py3dns==3.1.0
+validate-email==1.3
