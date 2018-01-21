@@ -6,12 +6,11 @@ Written by: * **Alisson Moretto** - [4w4k3](https://github.com/4w4k3)
 Twitter: @4w4k3Official
 
 ![Main](https://github.com/4w4k3/KnockMail/blob/master/Screens/snap.png)
-### Cloning:
+### Installation:
 ```
 git clone https://github.com/4w4k3/KnockMail.git
 ```
 
-### Running:
 ```
 cd KnockMail
 ```
@@ -20,9 +19,24 @@ cd KnockMail
 sudo pip3 install -r requirements.txt
 ```
 
+### Running:
+
+
+For an interactive menu: 
 ```
 python3 knock.py
 ```
+
+Validate single e-mail address:
+```
+python3 knock.py --email example@example.com
+```
+
+Validate emails stored in text file:
+```
+python3 knock.py --file /path/to/inputfile.txt
+```
+
 
 ### Screen
 ![SearchFile](https://github.com/4w4k3/KnockMail/blob/master/Screens/snap02.png)
@@ -45,6 +59,7 @@ Taken from [LICENSE](LICENSE).
 + Ubuntu 14.04-16.04 LTS
 + Debian 8.5
 + Linux Mint 18.1
++ OS X High Sierra
 
 ### Contribute:
 Send me more features if you want it :D
