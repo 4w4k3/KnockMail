@@ -17,22 +17,13 @@ cd KnockMail
 ```
 
 ```
-sudo su
+sudo pip3 install -r requirements.txt
 ```
 
 ```
-pip install -r requeriments.txt
+python3 knock.py
 ```
 
-```
-python knock.py
-```
-
-If you have another version of Python:
-
-```
-python2.7 knock.py
-```
 ### Screen
 ![SearchFile](https://github.com/4w4k3/KnockMail/blob/master/Screens/snap02.png)
 
@@ -58,7 +49,7 @@ Taken from [LICENSE](LICENSE).
 ### Contribute:
 Send me more features if you want it :D
 
-**I need your Help to become it to better.**
+**I need your help to make it become better.**
 
 ### Contact:
 **4w4k3@protonmail.com**
