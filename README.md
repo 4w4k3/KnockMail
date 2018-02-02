@@ -1,9 +1,13 @@
 # KnockMail
-Copyright 2017 KnockMail
+Copyright 2018 KnockMail
 
-Written by: * **Alisson Moretto** - [4w4k3](https://github.com/4w4k3)
+Written originally by: * **Alisson Moretto** - [4w4k3](https://github.com/4w4k3)
 
 Twitter: @4w4k3Official
+
+Python3 fork maintained by: * **Spencer Heywood** - [heywoodlh](https://github.com/heywoodlh)
+
+Twitter: [@lspencerheywood](https://twitter.com/lspencerheywood)
 
 ![Main](https://github.com/4w4k3/KnockMail/blob/master/Screens/snap.png)
 ### Installation:
