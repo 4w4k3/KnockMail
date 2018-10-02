@@ -7,9 +7,18 @@
 from os import system
 from sys import stdout, exit
 from validate_email import validate_email
+import DNS
+
+# decreases likelihood of DNS lookup timeout
+DNS.defaults['server'] = ['1.1.1.1', '1.0.0.1']
+
+BLUE, RED, WHITE, YELLOW, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;32m', '\033[0m'
+MAX_TRIES = 3
+
 results = []
 system('clear')
-BLUE, RED, WHITE, YELLOW, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;32m', '\033[0m'
+
+
 def search():
     inputfil = raw_input("Type the path of file containing a list of emails: ")
     with open(inputfil) as inputfile:
@@ -17,20 +26,44 @@ def search():
             results.append(line.strip())
     count = 0
     for i in results:
-        is_valid = validate_email(i,verify=True)
+        is_valid = do_validate_email(i)
         count += 1
-        if str(is_valid).upper() == "TRUE":
-	    stdout.write(GREEN + "[*] FOUND - [" + i + "] "+ BLUE + "{line " + str(count) + "}\n" + END)
+        if is_valid:
+            stdout.write(GREEN + "[*] FOUND - [" + i + "] " +
+                         BLUE + "{line " + str(count) + "}\n" + END)
         else:
-            stdout.write(RED + "[!] NOTFD - [" + i + "]" + BLUE + " {line " + str(count) + "}\n" + END)
+            stdout.write(RED + "[!] NOTFD - [" + i + "]" +
+                         BLUE + " {line " + str(count) + "}\n" + END)
+
 
 def single():
     ema = raw_input("Type the email to search: ")
-    is_valid = validate_email(ema,verify=True)
-    if str(is_valid).upper() == "TRUE":
+    is_valid = do_validate_email(ema)
+    if is_valid:
         stdout.write(GREEN + "[*] FOUND - [" + ema + "]\n" + END)
     else:
-	stdout.write(RED + "[!] NOTFD - [" + ema + "]\n" + END)
+        stdout.write(RED + "[!] NOTFD - [" + ema + "]\n" + END)
+
+
+def do_validate_email(email_address):
+    attempts = 0
+    success = False
+    result = False
+
+    while attempts < MAX_TRIES and success == False:
+        try:
+            result = validate_email(email_address, verify=True)
+            success = True
+        except DNS.Base.TimeoutError:
+            pass
+
+        attempts += 1
+
+    if result is None:
+        result = False
+
+    return result
+
 
 stdout.write(WHITE + '''
 By: @4w4k3
@@ -45,7 +78,7 @@ https://github.com/4w4k3
  _|    _|  _|    _|    _|_|      _|_|_|  _|    _|  
                                                mail''' + END + '''
             [ ]''' + RED + ' Knock Knock Mail ' + END + '''[ ]
-				 	v1.0   
+                    v1.0   
 [-                                              -]
 ''')
 print '''
@@ -59,12 +92,12 @@ print '''
 while True:
     try:
         ask = raw_input("KKM > ").format(RED, END)
-    	if ask.upper() == "1":
+        if ask.upper() == "1":
             search()
-	if ask.upper() == "2":
+        if ask.upper() == "2":
             single()
         if ask.upper() == "E":
-            exit(0) 
-    except:
+            exit(0)
+    except KeyboardInterrupt:
         print "\nThank you for use Knock Mail."
         exit(0)
