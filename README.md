@@ -7,7 +7,7 @@ Twitter: @4w4k3Official
 
 Python3 fork maintained by: * **Spencer Heywood** - [heywoodlh](https://github.com/heywoodlh)
 
-Twitter: [@lspencerheywood](https://twitter.com/lspencerheywood)
+Docker Installation by: * **Sion Smith** - [sionsmith](https://github.com/sionsmith)
 
 ![Main](https://github.com/4w4k3/KnockMail/blob/master/Screens/snap.png)
 ### Installation:
@@ -20,7 +20,7 @@ cd KnockMail
 ```
 
 ```
-sudo pip3 install -r requirements.txt
+docker build -t knockmail .
 ```
 
 ### Running:
@@ -28,17 +28,17 @@ sudo pip3 install -r requirements.txt
 
 For an interactive menu: 
 ```
-python3 knock.py
+docker run knockmail
 ```
 
 Validate single e-mail address:
 ```
-python3 knock.py --email example@example.com
+docker run knockmail --email example@example.com
 ```
 
 Validate emails stored in text file:
 ```
-python3 knock.py --file /path/to/inputfile.txt
+docker run knockmail --file /path/to/inputfile.txt
 ```
 
 
