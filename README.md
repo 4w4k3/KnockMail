@@ -7,12 +7,10 @@ Twitter: @4w4k3Official
 
 Python3 fork maintained by: * **Spencer Heywood** - [heywoodlh](https://github.com/heywoodlh)
 
-Twitter: [@lspencerheywood](https://twitter.com/lspencerheywood)
-
-![Main](https://github.com/4w4k3/KnockMail/blob/master/Screens/snap.png)
 ### Installation:
+
 ```
-git clone https://github.com/4w4k3/KnockMail.git
+git clone https://github.com/heywoodlh/KnockMail.git
 ```
 
 ```
@@ -28,17 +26,17 @@ sudo pip3 install -r requirements.txt
 
 For an interactive menu: 
 ```
-python3 knock.py
+python3 knockmail.py
 ```
 
 Validate single e-mail address:
 ```
-python3 knock.py --email example@example.com
+python3 knockmail.py --email example@example.com
 ```
 
 Validate emails stored in text file:
 ```
-python3 knock.py --file /path/to/inputfile.txt
+python3 knockmail.py --file /path/to/inputfile.txt
 ```
 
 
@@ -56,22 +54,13 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 Taken from [LICENSE](LICENSE).
 
-### Tested on:
-
-+ Kali Linux - SANA
-+ Kali Linux - ROLLING
-+ Ubuntu 14.04-16.04 LTS
-+ Debian 8.5
-+ Linux Mint 18.1
-+ OS X High Sierra
-
 ### Contribute:
 Send me more features if you want it :D
 
 **I need your help to make it become better.**
 
 ### Contact:
-**4w4k3@protonmail.com**
+**l.spencer.heywood@protonmail.com**
 
 ## License:
 

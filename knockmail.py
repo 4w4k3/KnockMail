@@ -16,7 +16,7 @@ results = []
 ### Argparser
 
 ## argparse arguments
-parser = argparse.ArgumentParser(description="e-mail verification utility")
+parser = argparse.ArgumentParser(description="email verification utility")
 
 ## Scan parser
 parser.add_argument('--email', help='email(s) to scan', metavar='EMAIL')
