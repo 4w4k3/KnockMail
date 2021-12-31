@@ -71,7 +71,7 @@ def banner():
      _|    _|  _|    _|    _|_|      _|_|_|  _|    _|  
                                                mail''' + END + '''
                 [ ]''' + RED + ' Knock Knock Mail ' + END + '''[ ]
-				 	v1.0   
+				 	v1.0.1   
      [-                                              -]
      ''')
 
